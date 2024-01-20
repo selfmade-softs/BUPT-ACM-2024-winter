@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.11
-        uses: selfmade-softs/BUPT-ACM-2024-winter@main
+        uses: actions/checkout@v4
         with:
           python-version: '3.11'
       - name: Install dependencies
@@ -14,3 +14,11 @@ jobs:
         run: python scripts/get_rank.py
       - name: transfer ranks to records
         run: python scripts/rank2record.py
+      - name: update change
+        run: |
+          git config --global user.email "Sherlocked_hzoi@163.com"
+          git config --global user.name "action"
+
+          git add -A
+          git commit -m "mannual update"
+          git push
