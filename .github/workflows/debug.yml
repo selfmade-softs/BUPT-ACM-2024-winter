@@ -21,8 +21,8 @@ jobs:
       - name: update change
         run: |
           git config --global user.email "Sherlocked_hzoi@163.com"
-          git config --global user.name "Sherlocked_hzoi"
+          git config --global user.name "action"
 
-          git add -A
+          git add *
           git commit -m "mannual update"
-          git push -f origin main
+          git push

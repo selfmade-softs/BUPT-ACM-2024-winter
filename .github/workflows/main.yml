@@ -1,14 +1,17 @@
 name: main
-on:
+on: 
   schedule:
     - cron: '00 04 * * *'
+
+permissions:
+  contents: write
+
 jobs:
   update-records:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Set up Python 3.11
-        uses: actions/setup-python@v3
+        uses: actions/checkout@v4
         with:
           python-version: '3.11'
       - name: Install dependencies
@@ -17,4 +20,11 @@ jobs:
         run: python scripts/get_rank.py
       - name: transfer ranks to records
         run: python scripts/rank2record.py
+      - name: update change
+        run: |
+          git config --global user.email "Sherlocked_hzoi@163.com"
+          git config --global user.name "action"
 
+          git add *
+          git commit -m "mannual update"
+          git push
