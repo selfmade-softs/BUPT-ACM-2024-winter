@@ -1,8 +1,6 @@
 name: debug
 on: workflow_dispatch
 
-permissions:
-
 
 jobs:
   update-records:
