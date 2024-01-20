@@ -25,7 +25,7 @@ def get_rank(driver, url):
     driver.get(url)
 
     setting_button = driver.find_element(By.ID, 'btn-setting')
-    ActionChains(driver).move_to_element(setting_button).click(setting_button).perform()
+    setting_button.click()
 
     try:
         WebDriverWait(driver, 10).until(
