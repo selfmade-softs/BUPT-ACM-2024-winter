@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python 3.11
-        uses: actions/BUPT-ACM-2024-winter@main
+        uses: selfmade-softs/BUPT-ACM-2024-winter@main
         with:
           python-version: '3.11'
       - name: Install dependencies
