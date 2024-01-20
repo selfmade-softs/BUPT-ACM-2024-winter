@@ -25,12 +25,13 @@ poster_username='Oranger_cc'
 
 contests=get_contests(driver, 
     url=f'{vjudge_prefix}/contest#category=public&running=3&title={contest_prefix}&owner={poster_username}')
-print('contest links get')
+print('contest links got')
 
 for contest in contests:
     rank=get_rank(driver, url=f'{contest["link"]}#rank')
     # rank.columns = rank.columns.get_level_values(0)
     rank.to_excel(f'ranks/{contest["name"].split(":")[0]}.xlsx')
 
+print('ranks got')
 driver.quit()
 

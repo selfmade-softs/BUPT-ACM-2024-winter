@@ -1,6 +1,5 @@
 import os
 from glob import glob
-from xlsxwriter import Workbook
 import pandas as pd
 
 def read_rank(rank):
@@ -27,3 +26,5 @@ for col, rank in zip(cols[:len(ranks)],ranks):
         pd.merge(cols, rank, how='outer', on='姓名') 
     
 record.to_excel('record.xlsx', index=False, sheet_name='赛时签到表(含补签)')
+
+print('rank to records complete')
