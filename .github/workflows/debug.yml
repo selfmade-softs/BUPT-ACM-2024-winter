@@ -1,5 +1,9 @@
 name: debug
 on: workflow_dispatch
+
+permissions:
+
+
 jobs:
   update-records:
     runs-on: ubuntu-latest
@@ -21,4 +25,4 @@ jobs:
 
           git add -A
           git commit -m "mannual update"
-          git push
+          git push -f origin main
