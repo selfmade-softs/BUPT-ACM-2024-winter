@@ -19,4 +19,4 @@ jobs:
       - name: get ranks
         run: python scripts/get_rank.py
       - name: transfer ranks to records
-        run: python scripts/rank2records.py
+        run: python scripts/rank2record.py
