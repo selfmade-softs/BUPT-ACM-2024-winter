@@ -1,7 +1,5 @@
-name: main
-on:
-  schedule:
-    - cron: '00 04 * * *'
+name: debug
+on: workflow_dispatch
 jobs:
   update-records:
     runs-on: ubuntu-latest
@@ -17,4 +15,3 @@ jobs:
         run: python scripts/get_rank.py
       - name: transfer ranks to records
         run: python scripts/rank2record.py
-
