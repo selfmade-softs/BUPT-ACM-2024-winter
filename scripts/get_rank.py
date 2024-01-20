@@ -9,7 +9,7 @@ from ecs import all_elements_contains_name
 from utils import *
 
 firefox_options = FirefoxOptions()
-firefox_options.add_argument('--headless')
+# firefox_options.add_argument('--headless')
 # http_proxy_server_url = 'localhost:10809'
 # firefox_options.add_argument('--proxy-server=' + http_proxy_server_url)
 # firefox_options.add_argument('--ignore-certificate-errors')
@@ -26,6 +26,7 @@ poster_username='Oranger_cc'
 contests=get_contests(driver, 
     url=f'{vjudge_prefix}/contest#category=public&running=3&title={contest_prefix}&owner={poster_username}')
 print('contest links got')
+print(contests)
 
 for contest in contests:
     rank=get_rank(driver, url=f'{contest["link"]}#rank')
