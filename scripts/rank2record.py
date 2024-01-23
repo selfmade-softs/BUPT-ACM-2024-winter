@@ -23,7 +23,7 @@ for col, rank in zip(cols[:len(ranks)],ranks):
     rank.columns=['姓名', col]
 
     record = rank if record.empty else \
-        pd.merge(cols, rank, how='outer', on='姓名') 
+        pd.merge(record, rank, how='outer', on='姓名') 
     
 record.to_excel('record.xlsx', index=False, sheet_name='赛时签到表(含补签)')
 

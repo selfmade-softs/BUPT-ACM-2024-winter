@@ -9,7 +9,7 @@ from ecs import all_elements_contains_name
 from utils import *
 
 firefox_options = FirefoxOptions()
-firefox_options.add_argument('--headless')
+# firefox_options.add_argument('--headless')
 # http_proxy_server_url = 'localhost:10809'
 # firefox_options.add_argument('--proxy-server=' + http_proxy_server_url)
 # firefox_options.add_argument('--ignore-certificate-errors')
@@ -32,6 +32,7 @@ for contest in contests:
     rank=get_rank(driver, url=f'{contest["link"]}#rank')
     # rank.columns = rank.columns.get_level_values(0)
     rank.to_excel(f'ranks/{contest["name"].split(":")[0]}.xlsx')
+    print(f'contest "{contest["name"]}" rank got')
 
 print('ranks got')
 driver.quit()
