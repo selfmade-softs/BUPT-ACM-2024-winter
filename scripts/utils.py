@@ -33,7 +33,7 @@ def get_rank(driver, url):
         )
     finally: 
         prev_contests_select = driver.find_element(By.ID, 'setting-check-all')
-        if not prev_contests_select.is_selected():
+        if prev_contests_select is not None and not prev_contests_select.is_selected():
             prev_contests_select.click()
 
         try:
